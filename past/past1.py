@@ -16,6 +16,10 @@ def bipartiteMatching(truth):
     pass
 
 
+def internalStructure():
+    pass
+
+
 def compare(ep1, ep2):
     if not ep1.startOP() != ep2.startOP():
         return False
@@ -32,15 +36,19 @@ def compare(ep1, ep2):
                 truth[s1][s2] = compare(s1, s2)
                 truth[s2][s1] = truth[s1][s2]
         lst_es = bipartiteMatching(truth)
-        for tup in lst_es:
-            pes1, pes2 = tup
-            if checkGraphRelation(pes1, pes2):
+
+        pes1 = internalStructure(es1)
+        pes2 = internalStructure(es1)
+        for matching in lst_es:
+            if checkGraphRelation(pes1, pes2, matching):
                 return True
         return False
     else:
         for i in range(len(es1)):
             if compare(es1[i],es2[i]) != True:
                 return False
+        pes1 = internalStructure(es1)
+        pes2 = internalStructure(es2)
         return checkGraphRelation(es1, es2)
 
 

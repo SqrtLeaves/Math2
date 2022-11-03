@@ -87,19 +87,6 @@ def bipartiteMatching(matrix: list[list[int]]) -> set[tuple[int | Any, ...]]:
         GB[i].outEdge.add(t)
 
     while 1:
-
-        # for va in GA.values():
-        #     va_in_s = (va in s.outEdge)
-        #     vb_to_va = False
-        #     for vb in GB.values():
-        #         if va in vb.outEdge:
-        #             vb_to_va = True
-        #     assert not (va_in_s and vb_to_va)
-
-        # cycle = graph.findCycle()
-        # if cycle:
-        #     print([(v.group, v.id) for v in cycle])
-
         augmentPath = findPath(s, t)
         if len(augmentPath) == 0:
             break
@@ -174,7 +161,7 @@ def allAllPerfectMatching_help(matrix: list[list[int]], matching: set[tuple[int 
     cycle = graph.findCycle()
     if not cycle:
         return None
-    print([(v.group, v.id) for v in cycle])
+    # print([(v.group, v.id) for v in cycle])
     EC = set()
     for i in range(len(cycle) - 1):
         head = cycle[i]
@@ -184,7 +171,7 @@ def allAllPerfectMatching_help(matrix: list[list[int]], matching: set[tuple[int 
         else:
             match = tuple([tail.id, head.id])
         EC.add(match)
-    print(len(EC), len(matching))
+    # print(len(EC), len(matching))
     return matching.symmetric_difference(EC)
 
 def newMatrix(dim: int):
