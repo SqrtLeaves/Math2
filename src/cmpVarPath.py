@@ -28,7 +28,7 @@ def _is_var(e) -> bool:
 
 
 def _get_all_op_path(src: dict) -> dict[str]:
-    assert len(src) == 1
+    assert len(list(src.keys())) == 1
     result = {}
     op = list(src.keys())[0]
     for e in src[op]:
@@ -37,6 +37,7 @@ def _get_all_op_path(src: dict) -> dict[str]:
                 result[e] = []
             result[e] += [[op]]
         else:
+            assert type(e) == dict
             sub_result = _get_all_op_path(e)
             for k in sub_result.keys():
                 if k not in result:
