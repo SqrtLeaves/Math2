@@ -25,6 +25,8 @@ class Block:
                 self.elements.append(Block(e, var=True))
             else:
                 self.elements.append(Block(e))
+    def constructInnerStructure(self):
+        pass
 
 
 def compare_blocks(b1: Block, b2: Block):
@@ -40,7 +42,7 @@ def compare_blocks(b1: Block, b2: Block):
         e1 = b1.elements[i]
         for j in range(dim):
             e2 = b2.elements[j]
-            if compare_blocks(e1,e2):
+            if compare_blocks(e1, e2):
                 matrix[i][j] = 1
     matching = allAllPerfectMatching(matrix)
     if len(matching) == 0 or len(matching[0]) < dim:

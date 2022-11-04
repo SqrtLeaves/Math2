@@ -3,3 +3,4 @@ class f(Enum):
     add = "add",
     times = "times",
     var = "var"
+
