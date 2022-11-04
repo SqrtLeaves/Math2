@@ -17,7 +17,10 @@ def compare_combo (src1: dict, src2: dict) -> tuple[int | float, ...]:
 def search_formula(src: dict):
     scores = []
     for expr_name in formula_db.keys():
-        expr_tag = formula_db[expr_name][db_tag]
+        if db_tag in formula_db[expr_name]:
+            expr_tag = formula_db[expr_name][db_tag]
+        else:
+            expr_tag = []
         expr_content = formula_db[expr_name][db_content]
         score = compare_combo(src, expr_content)
         scores.append(tuple([expr_name, expr_tag, score]))
