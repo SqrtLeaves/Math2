@@ -2,10 +2,12 @@ from src.func import *
 
 test1 = {
     f.add:[
-        "a",
+        "b",
         {
             f.times:[
-                "b","c"
+                "b", {
+                    f.add: ["a","b"]
+                }
             ]
         },
         {
@@ -21,7 +23,12 @@ test2 = {
     f.add:[
         {
             f.times: [
-                "b", "c"
+                "b", {
+                    f.add: ["a",
+                            {f.times:[
+                        "a","b"
+                    ]}]
+                }
             ]
         },
         {
@@ -32,3 +39,4 @@ test2 = {
         "a"
     ]
 }
+
