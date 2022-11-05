@@ -5,5 +5,7 @@ class f(Enum):
     var = "var",
     cos = "cos",
     sin = "sin",
-    minus = "minus"
+    minus = "minus",
+    relation = "relation",
+    norm = "norm"
 
