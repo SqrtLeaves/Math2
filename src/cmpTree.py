@@ -61,6 +61,7 @@ def construct_formula_tree(preorder):
             op_stack.append(op)
             num_stack.append(num)
             var_stack.append(0)
+    print(preorder)
     assert len(op_stack) == 1
     return op_stack[0]
 
