@@ -1,4 +1,6 @@
 from enum import Enum
+
+
 class f(Enum):
     add = "add",
     times = "times",
@@ -8,4 +10,3 @@ class f(Enum):
     minus = "minus",
     relation = "relation",
     norm = "norm"
-

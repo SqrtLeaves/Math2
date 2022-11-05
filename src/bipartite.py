@@ -122,9 +122,11 @@ def bipartiteMatching(matrix: list[list[int]]) -> set[tuple[int | Any, ...]]:
             matching.add(tuple([vertexA.id, vertexB.id]))
     return matching
 
+
 def findPath(s: Vertex, t: Vertex) -> list[Vertex]:
     marked = set()
     return findPath_(s, t, marked)
+
 
 def findPath_(s: Vertex, t: Vertex, marked: set[Vertex]) -> list[Vertex]:
     if s in marked:
@@ -141,9 +143,9 @@ def findPath_(s: Vertex, t: Vertex, marked: set[Vertex]) -> list[Vertex]:
     return []
 
 
-
 def allAllPerfectMatching_help(matrix: list[list[int]], matching: set[tuple[int | Any, ...]]) -> set[
-    tuple[int | Any, ...]] | None:
+                                                                                                     tuple[
+                                                                                                         int | Any, ...]] | None:
     assert len(matrix) == len(matrix[0])
     dim = len(matrix)
     graph = Graph(dim)
@@ -165,7 +167,7 @@ def allAllPerfectMatching_help(matrix: list[list[int]], matching: set[tuple[int 
     EC = set()
     for i in range(len(cycle) - 1):
         head = cycle[i]
-        tail = cycle[i+1]
+        tail = cycle[i + 1]
         if head.group == VGroup.A:
             match = tuple([head.id, tail.id])
         else:
@@ -174,11 +176,13 @@ def allAllPerfectMatching_help(matrix: list[list[int]], matching: set[tuple[int 
     # print(len(EC), len(matching))
     return matching.symmetric_difference(EC)
 
+
 def newMatrix(dim: int):
     matrix = []
     for i in range(dim):
         matrix.append([0] * dim)
     return matrix
+
 
 def slashGraph(matrix: list[list[int]], edge: tuple[int | Any, ...]):
     assert matrix[edge[0]][edge[1]] == 1
@@ -193,6 +197,7 @@ def slashGraph(matrix: list[list[int]], edge: tuple[int | Any, ...]):
     result[edge[0]][edge[1]] = 1
     return result
 
+
 def backSlashGraph(matrix: list[list[int]], edge: tuple[int | Any, ...]):
     assert matrix[edge[0]][edge[1]] == 1
     dim = len(matrix)
@@ -202,6 +207,7 @@ def backSlashGraph(matrix: list[list[int]], edge: tuple[int | Any, ...]):
             result[i][j] = matrix[i][j]
     result[edge[0]][edge[1]] = 0
     return result
+
 
 def allAllPerfectMatching(matrix: list[list[int]]):
     result = []

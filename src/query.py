@@ -1,5 +1,6 @@
 from src.formulaDB import *
 
+
 def find_relation(src: fID, relation: fTag):
     if relation not in relation_db:
         return
