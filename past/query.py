@@ -1,7 +1,7 @@
-from src.formulaDB import *
+from past.formulaDB import *
 
 
-def find_relation(src: fID, relation: fTag):
+def find_relation(src: fid, relation: fTag):
     if relation not in relation_db:
         return
     result = []

@@ -1,4 +1,3 @@
-from src.func import *
 from src.bipartite import *
 
 
@@ -17,7 +16,7 @@ class Block:
     def __init__(self, src: [dict | str], var: bool = False):
         self.src = src
         if var:
-            self.op = f.var
+            self.op = fc.var
             return
         assert len(self.src) == 1
         self.op = list(self.src.keys())[0]
@@ -40,7 +39,7 @@ def _compare_blocks(b1: Block, b2: Block, depth: float = float('inf')):
         return False
     if depth == 0:
         return True
-    if b1.op == f.var:
+    if b1.op == fc.var:
         return True
     if len(b1.elements) != len(b2.elements):
         return False

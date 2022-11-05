@@ -1,6 +1,6 @@
-from src.cmpBlock import *
-from src.cmpVarPath import *
-from src.formulaDB import *
+from past.cmpBlock import *
+from past.cmpVarPath import *
+from past.formulaDB import *
 
 
 def compare_combo(src1: dict, src2: dict) -> tuple[int | float, ...]:

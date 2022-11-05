@@ -1,5 +1,4 @@
 from src.bipartite import *
-from src.func import *
 
 
 def compare_var_path(src1: dict, src2: dict) -> bool:
@@ -48,7 +47,7 @@ def _get_all_op_path(src: dict) -> dict[str]:
     return result
 
 
-def _compare_2_path(path1: list[f], path2: list[f]):
+def _compare_2_path(path1: list[str], path2: list[str]):
     if len(path1) != len(path2):
         return False
     dim = len(path1)
