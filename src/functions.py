@@ -15,6 +15,7 @@ f_equal = "equal_2"
 f_and = "f_and_2"
 f_implies = "f_implies_2"
 f_answer = "f_answer_1"
+f_interval = "f_interval_2"
 
 f_is_in = "f_in_2"
 
@@ -42,4 +43,5 @@ is_compact = "is_compact_0"
 is_metric_space = "is_metric_space_0"
 is_sequence = "is_sequence_0"
 is_trivial = "is_trivial_0"
+is_limit_point = "is_limit_point_0"
 

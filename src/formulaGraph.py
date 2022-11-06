@@ -25,7 +25,7 @@ class fGraph:
         score_index = 2
         if formula[0] == f_implies:
             f1 = formula
-            f2 = [f_implies, (f_and, 1)] + f1[1:]
+            f2 = [f_implies] + [(f_add, 1)] + formula[1:]
             r1, r2 = self._search(f1), self._search(f2)
             for v in r1:
                 r1[v][score_index] = max(r1[v][score_index], r2[v][score_index])
@@ -37,7 +37,7 @@ class fGraph:
     def _search(self, formula: list):
         result = {}
         for v in self.vertexs:
-            result[v.id] = [v.id, v.name, cmp_tree(formula, v.content), v.comment] # score_index = 2
+            result[v.id] = [v.id, v.comment, cmp_tree(formula, v.content), v.name] # score_index = 2
         return result
 
     # def _search(self, formula: list):
@@ -80,15 +80,22 @@ def theorem_query(conditon: list[str | tuple], conlusion:list[str | tuple]):
         conlusion = [is_trivial]
     return theorem_generator(conditon, conlusion)
 
-def theorem_generator(conditon: list[str | tuple], conlusion:list[str | tuple]):
-    assert type(conditon[0]) == str or type(conditon[0]) == tuple
-    assert conditon.count(f_and) <= 1
-    assert conlusion.count(f_and) <= 1
-    if type(conditon[0]) == tuple or not conditon[0].startswith("is_"):
+def theorem_generator(conditon: list[str | tuple: int], conlusion:list[str | tuple | int]):
+    assert type(conditon[0]) in (str, int, tuple)
+    assert conditon.count(f_and) == 0
+    assert conlusion.count(f_and) == 0
+    if type(conditon[0]) == int:
+        imply = [(f_implies, conditon[0] + 1)]
+        conditon = conditon[1:]
+    elif type(conditon[0]) == tuple or not conditon[0].startswith("is_"):
         imply = [(f_implies, 2)]
     else:
         imply = [(f_implies, len(conditon) + 1)]
-    if type(conlusion[0]) == tuple or not conlusion[0].startswith("is_"):
+
+    if type(conlusion[0]) == int:
+        answer = [(f_answer, conlusion[0])]
+        conlusion = conlusion[1:]
+    elif type(conlusion[0]) == tuple or not conlusion[0].startswith("is_"):
         answer = [(f_answer, 1)]
     else:
         answer = [(f_answer, len(conlusion))]
@@ -209,7 +216,7 @@ tgraph = fGraph([
         14,
         "Y \subset X; E \subset Y; then E is open relative to Y iff E = Y intersection G for some open open subset G of X",
         theorem_generator(
-            [(f_and, 2), is_subset, is_open_relative_to],
+            [is_subset, is_open_relative_to],
             [f_equal, is_set, (f_and, 2), is_intersection, is_open]
         ),
         "Bady/Rudin/E13/TM2.30"
@@ -263,8 +270,7 @@ tgraph = fGraph([
         20,
         "If {K_\alpha} is a collection of compact subsets of a metric space X such that the intersection of every finite subcollection of {K_\alpha} is nonempty, then \intersection K_\alpha is nonempty",
         theorem_generator(
-            [(f_and, 6),
-             is_set, is_compact, is_metric_space,
+            [is_set, is_compact, is_metric_space,
              is_intersection, is_finite, is_not_empty],
             [is_intersection, is_not_empty]
         ),
@@ -278,6 +284,24 @@ tgraph = fGraph([
             [is_intersection, is_not_empty]
         ),
         "Bady/Rudin/E13/TM2.36"
+    ),
+    fNode(
+        22,
+        "If E is an infinite subset of a compact set K, then E has a limit point in K",
+        theorem_generator(
+            [is_infinite, is_subset, is_compact],
+            [is_limit_point]
+        ),
+        "Bady/Rudin/E13/TM2.37"
+    ),
+    fNode(
+        23,
+        "If {I_n} is a sequence of intervals in R^1, such that I_n \subset I_{n+1}, then \cap I_n is not empty",
+        theorem_generator(
+            [3, is_sequence, f_interval, 2, is_subset],
+            [is_intersection, is_not_empty]
+        ),
+        "Bady/Rudin/E13/TM2.38"
     )
 
 ])
