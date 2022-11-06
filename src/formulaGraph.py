@@ -106,7 +106,7 @@ tgraph = fGraph([
         1,
         "existence of sup/inf",
         [
-            (f_implies, 4), is_ordered_set, is_least_upper_bound, is_bounded_below, f_answer, is_inf_exist
+            (f_implies, 4), is_ordered_set, is_least_upper_bound, is_bounded, f_answer, is_inf_exist
         ],
         "Baby/Rudin/TM1.35"
     ),
@@ -116,7 +116,7 @@ tgraph = fGraph([
         [
             (f_implies, 3), is_complement, is_union, (f_answer, 2), is_intersection, is_complement
         ],
-        "Bady/Rudin/E13/TM2.22"
+        "Bady/Rudin/TM2.22"
     ),
     fNode(
         3,
@@ -124,7 +124,7 @@ tgraph = fGraph([
         [
             (f_implies, 2), is_open, (f_answer, 2), is_complement, is_closed
         ],
-        "Bady/Rudin/E13/TM2.23"
+        "Bady/Rudin/TM2.23"
     ),
     fNode(
         4,
@@ -132,7 +132,7 @@ tgraph = fGraph([
         [
             (f_implies, 2), is_closed, (f_answer, 2), is_complement, is_open
         ],
-        "Bady/Rudin/E13/TM2.23"
+        "Bady/Rudin/TM2.23"
     ),
     fNode(
         5,
@@ -140,7 +140,7 @@ tgraph = fGraph([
         [
             (f_implies, 2), is_open, (f_answer, 3), is_union, is_open, is_infinite
         ],
-        "Bady/Rudin/E13/TM2.24"
+        "Bady/Rudin/TM2.24"
     ),
     fNode(
         6,
@@ -148,7 +148,7 @@ tgraph = fGraph([
         [
             (f_implies, 2), is_closed, (f_answer, 3), is_intersection, is_closed, is_infinite
         ],
-        "Bady/Rudin/E13/TM2.24"
+        "Bady/Rudin/TM2.24"
     ),
     fNode(
         7,
@@ -156,7 +156,7 @@ tgraph = fGraph([
         [
             (f_implies, 2), is_open, (f_answer, 3), is_intersection, is_open, is_finite
         ],
-        "Bady/Rudin/E13/TM2.24"
+        "Bady/Rudin/TM2.24"
     ),
     fNode(
         8,
@@ -165,7 +165,7 @@ tgraph = fGraph([
             [is_closed],
             [is_union, is_closed, is_finite]
         ),
-        "Bady/Rudin/E13/TM2.24"
+        "Bady/Rudin/TM2.24"
     ),
     fNode(
         9,
@@ -174,7 +174,7 @@ tgraph = fGraph([
             [is_closure],
             [is_closed]
         ),
-        "Bady/Rudin/E13/TM2.27"
+        "Bady/Rudin/TM2.27"
     ),
     fNode(
         10,
@@ -183,7 +183,7 @@ tgraph = fGraph([
             [f_equal, is_set, is_closure],
             [is_closed]
         ),
-        "Bady/Rudin/E13/TM2.27"
+        "Bady/Rudin/TM2.27"
     ),
     fNode(
         11,
@@ -192,7 +192,7 @@ tgraph = fGraph([
             [is_set, is_closed],
             [f_equal, is_set, is_closure]
         ),
-        "Bady/Rudin/E13/TM2.27"
+        "Bady/Rudin/TM2.27"
     ),
     fNode(
         12,
@@ -201,7 +201,7 @@ tgraph = fGraph([
             [is_subset, is_closed],
             [is_subset, is_closure]
         ),
-        "Bady/Rudin/E13/TM2.27"
+        "Bady/Rudin/TM2.27"
     ),
     fNode(
         13,
@@ -210,7 +210,7 @@ tgraph = fGraph([
             [(f_and, 2), f_equal, 1, is_sup, is_closed],
             [f_is_in, 1, is_set]
         ),
-        "Bady/Rudin/E13/TM2.28"
+        "Bady/Rudin/TM2.28"
     ),
     fNode(
         14,
@@ -219,7 +219,7 @@ tgraph = fGraph([
             [is_subset, is_open_relative_to],
             [f_equal, is_set, (f_and, 2), is_intersection, is_open]
         ),
-        "Bady/Rudin/E13/TM2.30"
+        "Bady/Rudin/TM2.30"
     ),
     fNode(
         15,
@@ -228,7 +228,7 @@ tgraph = fGraph([
             [f_equal, is_set, (f_and, 2), is_intersection, is_open],
             [(f_and, 2), is_subset, is_open_relative_to]
         ),
-        "Bady/Rudin/E13/TM2.30"
+        "Bady/Rudin/TM2.30"
     ),
     fNode(
         16,
@@ -237,7 +237,7 @@ tgraph = fGraph([
             [is_subset, is_subset],
             [is_compact_relative_to, is_compact_relative_to]
         ),
-        "Bady/Rudin/E13/TM2.33"
+        "Bady/Rudin/TM2.33"
     ),
     fNode(
         17,
@@ -246,7 +246,7 @@ tgraph = fGraph([
             [is_compact, is_metric_space],
             [is_closed]
         ),
-        "Bady/Rudin/E13/TM2.34"
+        "Bady/Rudin/TM2.34"
     ),
     fNode(
         18,
@@ -255,7 +255,7 @@ tgraph = fGraph([
             [is_closed, is_subset, is_compact],
             [is_compact]
         ),
-        "Bady/Rudin/E13/TM2.35"
+        "Bady/Rudin/TM2.35"
     ),
     fNode(
         19,
@@ -264,26 +264,26 @@ tgraph = fGraph([
             [is_closed, is_compact],
             [is_compact, is_intersection]
         ),
-        "Bady/Rudin/E13/TM2.35"
+        "Bady/Rudin/TM2.35"
     ),
     fNode(
         20,
         "If {K_\alpha} is a collection of compact subsets of a metric space X such that the intersection of every finite subcollection of {K_\alpha} is nonempty, then \intersection K_\alpha is nonempty",
         theorem_generator(
-            [is_set, is_compact, is_metric_space,
-             is_intersection, is_finite, is_not_empty],
-            [is_intersection, is_not_empty]
+            [6, is_set, is_compact, is_metric_space,
+             is_intersection, is_finite, f_not, is_empty],
+            [2, is_intersection, f_not, is_empty]
         ),
-        "Bady/Rudin/E13/TM2.36"
+        "Bady/Rudin/TM2.36"
     ),
     fNode(
         21,
         "If {K_n} is a sequence of nonempty compact sets such that K_n \supset K_{n+1}, then \cap K_n is not empty",
         theorem_generator(
-            [is_sequence, is_not_empty, is_compact, is_subset],
-            [is_intersection, is_not_empty]
+            [4, is_sequence, f_not, is_empty, is_compact, is_subset],
+            [2, is_intersection, f_not, is_empty]
         ),
-        "Bady/Rudin/E13/TM2.36"
+        "Bady/Rudin/TM2.36"
     ),
     fNode(
         22,
@@ -292,17 +292,244 @@ tgraph = fGraph([
             [is_infinite, is_subset, is_compact],
             [is_limit_point]
         ),
-        "Bady/Rudin/E13/TM2.37"
+        "Bady/Rudin/TM2.37"
     ),
     fNode(
         23,
         "If {I_n} is a sequence of intervals in R^1, such that I_n \subset I_{n+1}, then \cap I_n is not empty",
         theorem_generator(
             [3, is_sequence, f_interval, 2, is_subset],
-            [is_intersection, is_not_empty]
+            [2, is_intersection, f_not, is_empty]
         ),
-        "Bady/Rudin/E13/TM2.38"
+        "Bady/Rudin/TM2.38"
+    ),
+    fNode(
+        24,
+        "Let k be a positive integer. If {I_n} is a sequence of k-cells such that I_n \supset I_{n+1}, then \cap I_n is not empty",
+        theorem_generator(
+            [is_sequence, is_k_cells, is_subset],
+            [2, is_intersection, f_not, is_empty]
+        ),
+        "Bady/Rudin/TM2.39"
+    ),
+    fNode(
+        25,
+        "Every k-cell is compact",
+        theorem_generator(
+            [is_k_cells],
+            [is_compact]
+        ),
+        "Bady/Rudin/TM2.40"
+    ),
+    fNode(
+        26,
+        "If E is closed, and bounded then, E is compact and every infinite subsets of E has a limit point in E",
+        theorem_generator(
+            [is_closed, is_bounded],
+            [
+                 is_compact,
+                 is_infinite, is_limit_point
+            ]
+        ),
+        "Bady/Rudin/TM2.41"
+    ),
+    fNode(
+        27,
+        "If E is compact, then E is closed, and every infinite subsets of E has a limit point in E",
+        theorem_generator(
+            [is_compact],
+            [
+                 is_closed, is_bounded,
+                 is_infinite, is_limit_point
+            ]
+        ),
+        "Bady/Rudin/TM2.41"
+    ),
+    fNode(
+        28,
+        "If every infinite subsets of E has a limit point in E; then E is closed,and bounded; and E is compact",
+        theorem_generator(
+            [is_infinite, is_limit_point],
+            [
+                is_compact,
+                is_closed, is_bounded
+            ]
+        ),
+        "Bady/Rudin/TM2.41"
+    ),
+    fNode(
+        29,
+        "Every bounded infinite subset of R^k has a limit point in R^k",
+        theorem_generator(
+            [is_bounded, is_finite, is_subset, is_R_k],
+            [is_limit_point]
+        ),
+        "Bady/Rudin/TM2.42"
+    ),
+    fNode(
+        30,
+        "Let P be a non-empty perfect set in R_k. Then P is uncountable",
+        theorem_generator(
+            [3, f_not, is_empty, is_perfect_set, is_R_k],
+            [1, f_not, is_countable]
+        ),
+        "Bady/Rudin/TM2.43"
+    ),
+    fNode(
+        31,
+        "Every interval [a,b] is uncountable. In particular, the set of all real numbers is uncountable.",
+        theorem_generator(
+            [2, f_interval, 2, is_R],
+            [1, f_not, is_countable]
+        ),
+        "Bady/Rudin/TM2.43"
+    ),
+    fNode(
+        32,
+        "A subset E of the real line R^1 is connected iff it has the following property: if x,y \in E, and x < z < y, then z \in E",
+        theorem_generator(
+            [is_R, is_connected],
+            theorem_generator(
+                [4, f_is_in, 2, f_is_in, 2, f_leq, 2, f_leq, 2],
+                [1, f_is_in, 2]
+            )
+        ),
+        "Bady/Rudin/TM2.47"
+    ),
+    fNode(
+        33,
+        "A subset E of the real line R^1 is connected iff it has the following property: if x,y \in E, and x < z < y, then z \in E",
+        theorem_generator(
+            theorem_generator(
+                [4, f_is_in, 2, f_is_in, 2, f_leq, 2, f_leq, 2],
+                [1, f_is_in, 2]
+            ),
+            [is_R, is_connected]
+        ),
+        "Bady/Rudin/TM2.47"
+    ),
+    fNode(
+        34,
+        "Cantor set is a perfect set which contain no segment",
+        theorem_generator(
+            [2, is_perfect_set, f_not, is_segment],
+            [is_Cantor_set]
+        ),
+        "Bady/Rudin/TM2.47"
+    ),
+    fNode(
+        35,
+        "E and closure(E) have the same limit points",
+        theorem_generator(
+            [is_set, is_closure],
+            [is_limit_point]
+        ),
+        "Bady/Rudin/EX6"
+    ),
+    fNode(
+        36,
+        "Def. of interior point",
+        theorem_generator(
+            [is_interior_point],
+            [is_trivial]
+        ),
+        "Bady/Rudin/E9"
+    ),
+    fNode(
+        37,
+        "If A,B are disjoint closed sets in some metric space X, they are separated",
+        theorem_generator(
+            [is_disjoint, is_metric_space],
+            [1, f_not, is_connected]
+        ),
+        "Bady/Rudin/E19"
+    ),
+    fNode(
+        38,
+        "Every connected metric space with least two points is uncountable",
+        theorem_generator(
+            [is_connected],
+            [1, f_not, is_countable]
+        ),
+        "Bady/Rudin/E19(d)"
+    ),
+    fNode(
+        39,
+        "Let X be a metric space in which every infinite subset has a limit point. Then X is separable",
+        theorem_generator(
+            [is_metric_space, is_infinite, is_limit_point],
+            [is_seperable]
+        ),
+        "Bady/Rudin/E24"
+    ),
+    fNode(
+        40,
+        "Every compact metric space K has a countable base, and K is thus separable",
+        theorem_generator(
+            [is_compact, is_metric_space, is_countable, is_base],
+            [is_seperable]
+        ),
+        "Bady/Rudin/E25"
+    ),
+    fNode(
+        41,
+        "Let X be a metric space in which every infinite subset has a limit point. Then X is compact",
+        theorem_generator(
+            [is_metric_space, is_infinite, is_limit_point],
+            [is_compact]
+        ),
+        "Bady/Rudin/E26"
+    ),
+    fNode(
+        42,
+        "Def. condensation point",
+        theorem_generator(
+            [2, is_neighborhood, f_not, is_countable],
+            [is_condensation_point]
+        ),
+        "Bady/Rudin/E27"
+    ),
+    fNode(
+        43,
+        "Every closed set in a separable metric space is the union of a perfect set and a set which is at most countable",
+        theorem_generator(
+            [is_closed, is_seperable],
+            [is_union, is_perfect_set, is_countable]
+        ),
+        "Bady/Rudin/E28"
+    ),
+    fNode(
+        44,
+        "Every open set in R^1 is the union of an at moust countable collection of disjoint segment",
+        theorem_generator(
+            [is_R, is_open],
+            [is_union, is_countable, is_disjoint, is_segment]
+        ),
+        "Bady/Rudin/E29"
+    ),
+    fNode(
+        45,
+        "If R^k = \cup F_n, where each F_n is a closed subset of R^k, then at least one F_n has a nonempty interior",
+        theorem_generator(
+            [is_R_k, is_closed],
+            [is_interior_point]
+        ),
+        "Bady/Rudin/E30"
+    ),
+    fNode(
+        46,
+        "If G_n is a dense open subset of R^k, then \cap G_n is not empty",
+        theorem_generator(
+            [is_dense, is_open, is_R_k],
+            [2, is_intersection, f_not, is_empty]
+        ),
+        "Bady/Rudin/E30"
     )
+
+
+
+
+
 
 ])
 
