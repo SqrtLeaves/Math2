@@ -13,7 +13,7 @@ print()
 
 
 test2 = theorem_query(
-    [is_compact, is_sequence],
+    [is_R_k],
     []
 )
 

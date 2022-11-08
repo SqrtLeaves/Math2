@@ -524,7 +524,216 @@ tgraph = fGraph([
             [2, is_intersection, f_not, is_empty]
         ),
         "Bady/Rudin/E30"
-    )
+    ),
+    # Baby/Rudin/Chap3
+    fNode(
+        47,
+        "If {p_n} is a sequence in a compact metric space3 X, then some subsequence of {p_n} converges to a point of X",
+        theorem_generator(
+            [is_sequence, is_compact, is_metric_space],
+            [is_sequence, is_subsequence, is_converge]
+        ),
+        "Baby/Rudin/TM3.6(a)"
+    ),
+    fNode(
+        48,
+        "Every bounded sequence in R^k contains a convergent subsequence",
+        theorem_generator(
+            [is_bounded, is_sequence, is_R_k],
+            [is_converge, is_sequence]
+        ),
+        "Baby/Rudin/TM3.6(b)"
+    ),
+    fNode(
+        49,
+        "The subsequential limits of a sequence {p_n} in a metric space X form a closed subset of X",
+        theorem_generator(
+            [is_subsequence, is_limit, is_sequence, is_metric_space],
+            [is_closed]
+        ),
+        "Baby/Rudin/TM3.7"
+    ),
+    fNode(
+        50,
+        "If closure(E) is the closure of a set E in a metric space X, then diam closure(E) = diam E",
+        theorem_generator(
+            [is_closure, is_metric_space],
+            [is_diameter, is_closure]
+        ),
+        "Baby/Rudin/TM3.10(a)"
+    ),
+    fNode(
+        51,
+        "If K_n is a sequence of compact sets in X such that K_n \supset K_{n+1}, and if \lim_{n -> \infty} diam K_n = 0, then \intersection_1^\infty K_n consists of exactly one point",
+        theorem_generator(
+            [is_sequence, is_compact, is_subset, is_limit, is_diameter],
+            [is_intersection, is_point]
+        ),
+        "Baby/Rudin/TM3.10(b)"
+    ),
+    fNode(
+        52,
+        "In any metric space X, every convergent sequence is a Cauchy sequence.",
+        theorem_generator(
+            [is_metric_space, is_converge, is_sequence],
+            [is_cauchy_sequence]
+        ),
+        "Baby/Rudin/TM3.11(a)"
+    ),
+    fNode(
+        53,
+        "If X is a compact metric space and if {p_n} is a cauchy sequence in X, then {p_n} converges to some point of X",
+        theorem_generator(
+            [is_compact, is_metric_space, is_cauchy_sequence],
+            [is_converge]
+        ),
+        "Baby/Rudin/3.11(b)"
+    ),
+    fNode(
+        54,
+        "In R^k, every Cauchy sequence converges",
+        theorem_generator(
+            [is_R_k, is_cauchy_sequence],
+            [is_converge]
+        ),
+        "Baby/Rudin/3.11(c)"
+    ),
+    fNode(
+        55,
+        "Suppose {s_n} is monotonic. Then {s_n} converges iff it is bounded",
+        theorem_generator(
+            [is_sequence, is_monotonical,is_converge],
+            [is_bounded]
+        ),
+        "Baby/Rudin/3.14"
+    ),
+    fNode(
+        56,
+        "Suppose {s_n} is monotonic. Then {s_n} converges iff it is bounded",
+        theorem_generator(
+            [is_sequence, is_monotonical, is_bounded],
+            [is_converge]
+        ),
+        "Baby/Rudin/3.14"
+    ),
+    fNode(
+        57,
+        "Let {s_n} be a sequence of real numbers. Let E and s* have the same meaning as in Def 3.16. Then s* has the following two properties. Then s* has the following two properties:",
+        theorem_generator(
+            [is_sequence, is_R, is_upper_limit],
+            [is_subset, is_bounded]
+        ),
+        "Baby/Rudin/"
+    ),
+    fNode(
+        58,
+        "\lim_{n} 1/(n^p) = 0",
+        theorem_generator(
+            [1, f_geq, 1, c_zero],
+            [1, f_equal, (is_limit, 1), f_reverse, f_pow_down, 1, c_zero]
+        ),
+        "Baby/Rudin/TM3.20(a)"
+    ),
+    fNode(
+        59,
+        "If p > 0, then \lim_{n} \sqrtn = 1",
+        theorem_generator(
+            [1, f_geq, 1, c_zero],
+            [1, f_equal, (is_limit, 1), f_sqrtn, 1, c_one]
+        ),
+        "Baby/Rudin/TM3.20(b)"
+    ),
+    fNode(
+        60,
+        "lim_n sqrt[n]n = 1",
+        theorem_generator(
+            [is_trivial],
+            [1, f_equal, (is_limit, 1), f_sqrtn, 1, c_one]
+        ),
+        "Baby/Rudin/TM3.20(c)"
+    ),
+    fNode(
+        61,
+        "lim_n n^a/(1+p)^n",
+        theorem_generator(
+            [1, f_geq, 1, c_zero],
+            [1, f_equal, c_zero, (is_limit, 1), f_times, f_pow_down, 1, f_reverse, f_pow_up, f_add, c_one, 1]
+        ),
+        "Baby/Rudin/3.20(c)"
+    ),
+    fNode(
+        62,
+        "If |x| < 1, then \lim_n x^n = 0",
+        theorem_generator(
+            [f_leq, f_norm, 1, c_one],
+            [f_equal, (is_limit, 1), f_pow_up, 1, c_zero]
+        ),
+        "Baby/Rudin/3.20(e)"
+    ),
+    fNode(
+        63,
+        "A series is converge iff ...",
+        theorem_generator(
+            [1, (is_converge, 1), f_sum, is_sequence],
+            [1, f_leq, f_norm, f_sum, is_sequence, c_epsilon]
+        ),
+        "Baby/Rudin/3.22"
+    ),
+    fNode(
+        64,
+        "If \sum(a_n) converges, then \lim_n a_n = 0",
+        theorem_generator(
+            [1, (is_converge, 1), f_sum, is_sequence],
+            [1, f_equal, (is_limit, 1), is_sequence, c_zero]
+        ),
+        "Baby/Rudin/3.23"
+    ),
+    fNode(
+        65,
+        "A series of nonnegative terms converges iff its partial sums form a bounded sequence",
+        theorem_generator(
+            [1, (is_converge, 1), f_sum, (is_sequence, 1), f_not, is_positive],
+            [is_bounded, is_sequence]
+        ),
+        "Baby/Rudin/3.24"
+    ),
+    fNode(
+        66,
+        "if converge - converge",
+        theorem_generator(
+            [is_sequence, is_converge],
+            [is_sequence, is_converge]
+        ),
+        "Baby/Rudin/TM3.25(a)"
+    ),
+    fNode(
+        67,
+        "If diverge - diver",
+        theorem_generator(
+            [1, (is_sequence, 1), f_not, is_converge],
+            [1, (is_sequence, 1), f_not, is_converge]
+        ),
+        "Baby/Rudin/TM3.25(b)"
+    ),
+    fNode(
+        68,
+        "sum(x^n) = 1/(1-x)",
+        theorem_generator(
+            [is_trivial],
+            [1, f_equal, f_sum, f_pow_down, 1, f_reverse, f_add, c_one, f_minus, 1]
+        ),
+        "Baby/Rudin/TM3.26"
+    ),
+    fNode(
+        69,
+        "convergence test",
+        theorem_generator(
+            [1] + isc_series,
+            [1] + isc_series
+        ),
+        "Baby/Rudin/3.27"
+    ),
+
 
 
 
